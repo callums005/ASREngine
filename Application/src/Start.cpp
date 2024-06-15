@@ -9,7 +9,11 @@ public:
 
 	void Start() override
 	{
-
+		ASREngine::Logger::Log(ASREngine::EnLogLevel::Information, "Hello World");
+		ASREngine::Logger::Log(ASREngine::EnLogLevel::Debug, "Hello World");
+		ASREngine::Logger::Log(ASREngine::EnLogLevel::Warning, "Hello World");
+		ASREngine::Logger::Log(ASREngine::EnLogLevel::Error, "Hello World");
+		ASREngine::Logger::Log(ASREngine::EnLogLevel::Critical, "Hello World");
 	}
 
 	void NextFrame() override
