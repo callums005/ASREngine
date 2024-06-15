@@ -9,11 +9,10 @@ public:
 
 	void Start() override
 	{
-		ASREngine::Logger::Log(ASREngine::EnLogLevel::Information, "Hello World");
-		ASREngine::Logger::Log(ASREngine::EnLogLevel::Debug, "Hello World");
-		ASREngine::Logger::Log(ASREngine::EnLogLevel::Warning, "Hello World");
-		ASREngine::Logger::Log(ASREngine::EnLogLevel::Error, "Hello World");
-		ASREngine::Logger::Log(ASREngine::EnLogLevel::Critical, "Hello World");
+		ASREngine::Event ev;
+
+		ASREngine::EventDispatcher dispatcher(ev);
+		dispatcher.Dispatch<ASREngine::Event>([this](ASREngine::Event& e) { Test(e); });
 	}
 
 	void NextFrame() override
@@ -24,6 +23,13 @@ public:
 	void End() override
 	{
 
+	}
+
+private:
+	void Test(ASREngine::Event& event)
+	{
+		event.Handled = true;
+		ASREngine::Logger::Log(ASREngine::EnLogLevel::Information, "Called event");
 	}
 };
 
