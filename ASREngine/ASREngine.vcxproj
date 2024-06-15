@@ -138,11 +138,16 @@
     <ClInclude Include="src\Include\Application.h" />
     <ClInclude Include="src\Include\ASREngine.h" />
     <ClInclude Include="src\Include\EntryPoint.h" />
+    <ClInclude Include="src\Include\Events.h" />
+    <ClInclude Include="src\Include\Events\Event.h" />
+    <ClInclude Include="src\Include\Events\MouseEvents.h" />
     <ClInclude Include="src\Include\Logger.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Application.cpp" />
     <ClCompile Include="src\Core\Logging\Logger.cpp" />
+    <ClCompile Include="src\Include\Events\KeyboardEvents.h" />
+    <ClCompile Include="src\Include\Events\WindowEvents.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
