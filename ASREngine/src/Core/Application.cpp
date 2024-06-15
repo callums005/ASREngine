@@ -9,7 +9,7 @@ namespace ASREngine
 
 	void Application::Execute()
 	{
-		printf("ASREngine Starting...\n");
+		Logger::Log(EnLogLevel::Debug, "ASREngine Starting...");
 
 		Start();
 
